@@ -56,6 +56,10 @@ sourcetypePrefix: "kube"
 
 # Local splunk configurations
 splunk:
+  # For adding any value that may not exist in the config.
+  custom: []
+  #  mycustomthing1: myvalue1
+  #  mycustomthing2: myvalue2
   # Configurations for HEC (HTTP Event Collector)
   hec:
     # host is required and should be provided by user

@@ -344,6 +344,11 @@ data:
 
       # = output =
       <match **>
+        {{- if or .Values.splunk.custom }}
+        {{- range $key, $val := .Values.splunk.custom }}
+        {{$key}} {{ $val }}
+        {{- end }}
+        {{- end }}
         {{- if or .Values.splunk.hec.host .Values.global.splunk.hec.host }}
         @type splunk_hec
         {{- with or .Values.splunk.hec.protocol .Values.global.splunk.hec.protocol }}
