@@ -84,6 +84,9 @@ data:
       pos_file {{ .Values.containers.path }}/splunk-fluentd-containers.log.pos
       path_key source
       read_from_head true
+      {{- if .Values.containers.follow_inodes }}
+      follow_inodes true
+      {{- end }}
       refresh_interval {{ .Values.containers.refreshInterval | default 60 }}
       <parse>
       {{- if eq .Values.containers.logFormatType "cri" }}

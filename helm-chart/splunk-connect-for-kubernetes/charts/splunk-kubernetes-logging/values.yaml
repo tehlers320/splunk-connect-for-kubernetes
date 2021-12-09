@@ -38,6 +38,8 @@ containers:
   refreshInterval:
   # Boolean to whether to remove blank events or not
   removeBlankEvents: true
+  # Boolean to follow inodes instead of following file names. Guarantees more stable delivery and allows to use * in path pattern with rotating files
+  follow_inodes: false
 
 # Directory where to read journald logs. (docker daemon logs, kubelet logs, and anyother specified serivce logs)
 journalLogPath: /run/log/journal
